@@ -1,0 +1,77 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="MyStore.MasterPage" %>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+
+</head>
+<body>
+
+    <form id="form1" runat="server">
+        <div id="header">
+            <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <span class="navbar-brand text-white">MyStore</span>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            <asp:LinkButton runat="server" CssClass="btn btn-primary " ID="login" Text="Login" OnClick="login_Click" />
+                            <asp:LinkButton runat="server" CssClass="btn btn-primary " ID="logout" Text="LogOut" OnClick="logout_Click" />
+                        </ul>
+                        <a runat="server" class="navbar-brand" href="admin/default.aspx" hidden="hidden" id="adminlink">AdminView</a>
+                        <a class="navbar-brand" href="../default.aspx">Default  |</a>
+                        <asp:Label runat="server" ID="UFirstname" CssClass="label label-success" Text="Firstname" />
+                        <asp:Label runat="server" ID="ULastname" CssClass=" label label-success" Text="LastName" />
+                    </div>
+
+
+                    <asp:SiteMapPath ID="sitemap1" runat="server" />
+                    <asp:ContentPlaceHolder ID="head" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+
+                <div id="content">
+                    <asp:ContentPlaceHolder ID="centre" runat="server">
+                    </asp:ContentPlaceHolder>
+
+
+                    <div id="content2">
+                        <asp:ContentPlaceHolder ID="right" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                    <div id="content3">
+                        <asp:ContentPlaceHolder ID="left" runat="server">
+                        </asp:ContentPlaceHolder>
+
+
+                    </div>
+                </div>
+
+                <div id="footer" class="label-warning">
+                    &copy;  2014  Lovejot Singh 
+                </div>
+    </form>
+</body>
+</html>
